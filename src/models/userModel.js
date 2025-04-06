@@ -6,7 +6,8 @@ export const getAllUsersService = async () =>{
 }
 
 export const getUserByIdService = async (id) =>{
-    const result = await pool.query("SELECT * FROM users where id = $1",[id])
+    const result = await pool.query("SELECT * FROM users WHERE id = $1",[id])
+    console.log(id,result,"in result")
     return result.rows[0];
 }
 

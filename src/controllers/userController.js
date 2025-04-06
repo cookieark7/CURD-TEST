@@ -39,7 +39,7 @@ export const getUserById = async (req, res, next) => {
   try {
     const userById = await getUserByIdService(id);
     if (!userById) return handleResponse(res, 404, "User not found");
-    handleResponse(res, 201, "user fetched successFully", users);
+    handleResponse(res, 201, "user fetched successFully", userById);
   } catch (err) {
     next(err);
   }
